@@ -1,5 +1,7 @@
 # devhub-ansible-jumphost
 
+> **Archived:** This role is no longer maintained because a dedicated Ansible role for a jumphost adds unnecessary complexity. A better approach is to provision a minimal VM from a standardized/cloud image using Terraform/OpenTofu and use cloud-init only for the initial bootstrap and automation access. Common OS configuration and hardening should come from a reusable baseline, with Ansible reserved for configuration that is genuinely jumphost-specific. For smaller environments such as a homelab, an even simpler option is a lightweight LXC container running OpenSSH. Alternatively, solutions such as Tailscale or a dedicated access platform can reduce or eliminate the need for a traditional jumphost altogether. The goal is to keep the access layer minimal, reproducible, disposable, and easy to maintain. **The point is: it is better to avoid a complex Ansible role for the jumphost and rely on simpler, more maintainable solutions that require less code and ongoing maintenance (reuse existing code/roles instead of maintaining this role).**
+
 > For shared package design and engineering practices, see
 [DevHub's Engineering & Coding Reference](https://github.com/CollinPoetoehena/DevHub/blob/main/reference/engineering/README.md). This README covers this package's setup, usage, design decisions, and exceptions.
 
